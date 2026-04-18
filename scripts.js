@@ -1,97 +1,55 @@
-/**
- * Data Catalog Project Starter Code - SEA Stage 2
- *
- * This file is where you should be doing most of your work. You should
- * also make changes to the HTML and CSS files, but we want you to prioritize
- * demonstrating your understanding of data structures, and you'll do that
- * with the JavaScript code you write in this file.
- *
- * The comments in this file are only to help you learn how the starter code
- * works. The instructions for the project are in the README. That said, here
- * are the three things you should do first to learn about the starter code:
- * - 1 - Change something small in index.html or style.css, then reload your
- *    browser and make sure you can see that change.
- * - 2 - On your browser, right click anywhere on the page and select
- *    "Inspect" to open the browser developer tools. Then, go to the "console"
- *    tab in the new window that opened up. This console is where you will see
- *    JavaScript errors and logs, which is extremely helpful for debugging.
- *    (These instructions assume you're using Chrome, opening developer tools
- *    may be different on other browsers. We suggest using Chrome.)
- * - 3 - Add another string to the titles array a few lines down. Reload your
- *    browser and observe what happens. You should see a fourth "card" appear
- *    with the string you added to the array, but a broken image.
- *
- */
+const players = [
+  { name: "Mike Trout", type: "hitter", position: "CF", avg: 0.301, hr: 40, era: null },
+  { name: "Taylor Ward", type: "hitter", position: "RF", avg: 0.265, hr: 25, era: null },
+  { name: "Reid Detmers", type: "pitcher", position: "Starter", avg: null, hr: null, era: 4.20 },
+  { name: "Logan O'Hoppe", type: "hitter", position: "C", avg: 0.240, hr: 20, era: null }
 
-const FRESH_PRINCE_URL =
-  "https://upload.wikimedia.org/wikipedia/en/3/33/Fresh_Prince_S1_DVD.jpg";
-const CURB_POSTER_URL =
-  "https://m.media-amazon.com/images/M/MV5BZDY1ZGM4OGItMWMyNS00MDAyLWE2Y2MtZTFhMTU0MGI5ZDFlXkEyXkFqcGdeQXVyMDc5ODIzMw@@._V1_FMjpg_UX1000_.jpg";
-const EAST_LOS_HIGH_POSTER_URL =
-  "https://static.wikia.nocookie.net/hulu/images/6/64/East_Los_High.jpg";
-
-// This is an array of strings (TV show titles)
-let titles = [
-  "Fresh Prince of Bel Air",
-  "Curb Your Enthusiasm",
-  "East Los High",
 ];
-// Your final submission should have much more data than this, and
-// you should use more than just an array of strings to store it all.
 
-// This function adds cards the page to display the data in the array
-function showCards() {
-  const cardContainer = document.getElementById("card-container");
-  cardContainer.innerHTML = "";
-  const templateCard = document.querySelector(".card");
+let currentTab = "hitter";
+let currentSort = "name";
+let sortDir = 1;
 
-  for (let i = 0; i < titles.length; i++) {
-    let title = titles[i];
-
-    // This part of the code doesn't scale very well! After you add your
-    // own data, you'll need to do something totally different here.
-    let imageURL = "";
-    if (i == 0) {
-      imageURL = FRESH_PRINCE_URL;
-    } else if (i == 1) {
-      imageURL = CURB_POSTER_URL;
-    } else if (i == 2) {
-      imageURL = EAST_LOS_HIGH_POSTER_URL;
+function render() {
+  let list = players.filter(p => p.type === currentTab);
+  list.sort((a, b) => {
+    let aVal = a[currentSort];
+    let bVal = b[currentSort];
+    if (aVal == null) return 1;
+    if (bVal == null) return -1;
+    if (typeof aVal === "string") {
+      return aVal.localeCompare(bVal) * sortDir;
     }
+    return (aVal - bVal) * sortDir;
+  });
+  const body = document.getElementById("table-body");
+  body.innerHTML = "";
+  list.forEach(p => {
+  const row = document.createElement("tr");
+  row.innerHTML = `
+    <td>${p.name}</td>
+    <td>${p.position}</td>
+    <td>${p.avg ?? "-"}</td>
+    <td>${p.hr ?? "-"}</td>
+    ${currentTab === "pitcher" ? `<td>${p.era ?? "-"}</td>` : ""}
+  `;
+  body.appendChild(row);
+  });
+}
 
-    const nextCard = templateCard.cloneNode(true); // Copy the template card
-    editCardContent(nextCard, title, imageURL); // Edit title and image
-    cardContainer.appendChild(nextCard); // Add new card to the container
+function setTab(tab) {
+  currentTab = tab;
+  document.getElementById("era-header").style.display = tab === "pitcher" ? "" : "none";
+  render();
+}
+function sortBy(col) {
+  if (currentSort === col) {
+    sortDir *= -1;
+  } else {
+    currentSort = col;
+    sortDir = 1;
   }
+  render();
 }
 
-function editCardContent(card, newTitle, newImageURL) {
-  card.style.display = "block";
-
-  const cardHeader = card.querySelector("h2");
-  cardHeader.textContent = newTitle;
-
-  const cardImage = card.querySelector("img");
-  cardImage.src = newImageURL;
-  cardImage.alt = newTitle + " Poster";
-
-  // You can use console.log to help you debug!
-  // View the output by right clicking on your website,
-  // select "Inspect", then click on the "Console" tab
-  console.log("new card:", newTitle, "- html: ", card);
-}
-
-// This calls the addCards() function when the page is first loaded
-document.addEventListener("DOMContentLoaded", showCards);
-
-function quoteAlert() {
-  console.log("Button Clicked!");
-  alert(
-    "I guess I can kiss heaven goodbye, because it got to be a sin to look this good!",
-  );
-}
-
-function removeLastCard() {
-  titles.pop(); // Remove last item in titles array
-  showCards(); // Call showCards again to refresh
-}
+setTab("hitter");

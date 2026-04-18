@@ -1,31 +1,25 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-  <head>
-    <title>LA TV Shows | Home</title>
-    <meta name="description" content="A Catalog of Shows Set in Los Angeles" />
-    <link rel="stylesheet" href="style.css" />
-    <script type="text/javascript" src="scripts.js"></script>
-  </head>
-
-  <body>
-    <header class="main-header">
-      <h1 class="title">LA TV Shows</h1>
-    </header>
-    <div id="card-container"></div>
-    <div class="card" style="display: none">
-      <div class="card-content">
-        <h2>TV Show Title</h2>
-        <img src="" alt="TV Show Poster" />
-        <ul>
-          <li>Bullet Point 1</li>
-          <li>Bullet Point 2</li>
-          <li>Bullet Point 3</li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer">
-      <button onclick="quoteAlert()">Get A Quote!</button>
-      <button onclick="removeLastCard()">Remove A Card!</button>
-    </div>
-  </body>
+<head>
+  <title>Baseball Catalog</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Angels Catalog</h1>
+  <button onclick="setTab('hitter')">Hitters</button>
+  <button onclick="setTab('pitcher')">Pitchers</button>
+  <table>
+    <thead>
+      <tr>
+        <th onclick="sortBy('name')">Name</th>
+        <th>Position</th>
+        <th onclick="sortBy('avg')">AVG</th>
+        <th onclick="sortBy('hr')">HR</th>
+        <th onclick="sortBy('era')" id = "era-header">ERA</th>
+      </tr>
+    </thead>
+    <tbody id="table-body"></tbody>
+  </table>
+  <script src="scripts.js"></script>
+</body>
 </html>
