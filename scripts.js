@@ -29,17 +29,19 @@ function render() {
   row.innerHTML = `
     <td>${p.name}</td>
     <td>${p.position}</td>
-    <td>${p.avg ?? "-"}</td>
-    <td>${p.hr ?? "-"}</td>
+    ${currentTab === "hitter" ? `<td>${p.avg ?? "-"}</td>` : ""}
+    ${currentTab === "hitter" ? `<td>${p.hr ?? "-"}</td>` : ""}
     ${currentTab === "pitcher" ? `<td>${p.era ?? "-"}</td>` : ""}
   `;
   body.appendChild(row);
-  });
+});
 }
 
 function setTab(tab) {
   currentTab = tab;
   document.getElementById("era-header").style.display = tab === "pitcher" ? "" : "none";
+  document.getElementById("avg-header").style.display = tab === "hitter" ? "" : "none";
+  document.getElementById("hr-header").style.display = tab === "hitter" ? "" : "none";
   render();
 }
 function sortBy(col) {
