@@ -6,26 +6,47 @@
 </head>
 <body>
   <h1>Angels Catalog</h1>
+  <p id="timestamp">Stats as of 4/19/2026 12:00 PM</p>
   <button onclick="setTab('hitter')">Hitters</button>
   <button onclick="setTab('pitcher')">Pitchers</button>
   <button onclick="toggleStats()">Career Stats</button>
-  <table>
-    <thead>
-      <tr>
-        <th onclick="sortBy('name')">Name</th>
-        <th>Position</th>
-        <th onclick="sortBy('BA')" id="ba-header">BA</th>
-        <th onclick="sortBy('HR')" id="hr-header">HR</th>
-        <th onclick="sortBy('OPS')" id="ops-header">OPS</th>
-        <th onclick="sortBy('WAR')" id="war-hitter-header">WAR</th>
-        <th onclick="sortBy('ERA')" id="era-header">ERA</th>
-        <th onclick="sortBy('IP')" id="ip-header">IP</th>
-        <th onclick="sortBy('SO')" id="so-header">SO</th>
-        <th onclick="sortBy('WAR')" id="war-pitcher-header">WAR</th>
-      </tr>
-    </thead>
-    <tbody id="table-body"></tbody>
-  </table>
+
+  <div class="catalog-container">
+    <table>
+      <thead>
+        <tr>
+          <th onclick="sortBy('name')">Name</th>
+          <th>Position</th>
+          <th onclick="sortBy('BA')" id="ba-header">BA</th>
+          <th onclick="sortBy('HR')" id="hr-header">HR</th>
+          <th onclick="sortBy('OPS')" id="ops-header">OPS</th>
+          <th onclick="sortBy('WAR')" id="war-hitter-header">WAR</th>
+          <th onclick="sortBy('ERA')" id="era-header">ERA</th>
+          <th onclick="sortBy('IP')" id="ip-header">IP</th>
+          <th onclick="sortBy('SO')" id="so-header">SO</th>
+          <th onclick="sortBy('WAR')" id="war-pitcher-header">WAR</th>
+        </tr>
+      </thead>
+      <tbody id="table-body"></tbody>
+    </table>
+
+    <div id="glossary">
+      <h3>Stat Glossary</h3>
+      <div id="hitter-glossary">
+        <p><strong>BA</strong> — Batting Average. Hits divided by at-bats.</p>
+        <p><strong>HR</strong> — Home Runs. Total home runs hit.</p>
+        <p><strong>OPS</strong> — On-base Plus Slugging. Measures a hitter's ability to get on base and hit for power.</p>
+        <p><strong>WAR</strong> — Wins Above Replacement. How many wins a player adds compared to a replacement level player.</p>
+      </div>
+      <div id="pitcher-glossary" style="display:none">
+        <p><strong>ERA</strong> — Earned Run Average. Average earned runs allowed per 9 innings.</p>
+        <p><strong>IP</strong> — Innings Pitched. Total innings a pitcher has thrown.</p>
+        <p><strong>SO</strong> — Strikeouts. Total batters struck out.</p>
+        <p><strong>WAR</strong> — Wins Above Replacement. How many wins a player adds compared to a replacement level player.</p>
+      </div>
+    </div>
+  </div>
+
   <script src="scripts.js"></script>
 </body>
 </html>

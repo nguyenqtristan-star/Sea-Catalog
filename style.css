@@ -17,7 +17,7 @@ table {
 
 th, td {
   border: 1px solid #ccc;
-  padding: 8px;
+  padding: 8px 20px;
   text-align: left;
 }
 
@@ -26,12 +26,34 @@ th {
   background: #f4f4f4;
 }
 
-.pitcher-col {
-  display: none;
+.catalog-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
 }
 
-th, td {
+#glossary {
+  width: 220px;
+  background: #f9f9f9;
   border: 1px solid #ccc;
-  padding: 8px 20px;
-  text-align: left;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  margin-top: 20px;
+}
+
+#glossary h3 {
+  margin-top: 0;
+}
+
+#glossary p {
+  margin: 6px 0;
+}
+
+#timestamp {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  font-size: 12px;
+  color: #888;
 }

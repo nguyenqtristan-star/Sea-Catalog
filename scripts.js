@@ -82,6 +82,8 @@ function setTab(tab) {
   document.getElementById("ip-header").style.display = tab === "pitcher" ? "table-cell" : "none";
   document.getElementById("so-header").style.display = tab === "pitcher" ? "table-cell" : "none";
   document.getElementById("war-pitcher-header").style.display = tab === "pitcher" ? "table-cell" : "none";
+  document.getElementById("hitter-glossary").style.display = tab === "hitter" ? "block" : "none";
+  document.getElementById("pitcher-glossary").style.display = tab === "pitcher" ? "block" : "none";
   render();
 }
 
