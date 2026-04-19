@@ -2,22 +2,36 @@ body {
   font-family: Arial;
   padding: 20px;
 }
+
 button {
   margin: 5px;
   padding: 8px;
   cursor: pointer;
 }
+
 table {
-  width: 100%;
+  width: auto;
   border-collapse: collapse;
   margin-top: 20px;
 }
+
 th, td {
   border: 1px solid #ccc;
   padding: 8px;
   text-align: left;
 }
+
 th {
   cursor: pointer;
   background: #f4f4f4;
+}
+
+.pitcher-col {
+  display: none;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 8px 20px;
+  text-align: left;
 }

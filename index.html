@@ -1,21 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Baseball Catalog</title>
+  <title>Angels Catalog</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <h1>Angels Catalog</h1>
   <button onclick="setTab('hitter')">Hitters</button>
   <button onclick="setTab('pitcher')">Pitchers</button>
+  <button onclick="toggleStats()">Career Stats</button>
   <table>
     <thead>
       <tr>
         <th onclick="sortBy('name')">Name</th>
         <th>Position</th>
-        <th onclick="sortBy('avg')" id="avg-header">AVG</th>
-        <th onclick="sortBy('hr')" id="hr-header">HR</th>
-        <th onclick="sortBy('era')" id="era-header">ERA</th>
+        <th onclick="sortBy('BA')" id="ba-header">BA</th>
+        <th onclick="sortBy('HR')" id="hr-header">HR</th>
+        <th onclick="sortBy('OPS')" id="ops-header">OPS</th>
+        <th onclick="sortBy('WAR')" id="war-hitter-header">WAR</th>
+        <th onclick="sortBy('ERA')" id="era-header">ERA</th>
+        <th onclick="sortBy('IP')" id="ip-header">IP</th>
+        <th onclick="sortBy('SO')" id="so-header">SO</th>
+        <th onclick="sortBy('WAR')" id="war-pitcher-header">WAR</th>
       </tr>
     </thead>
     <tbody id="table-body"></tbody>
