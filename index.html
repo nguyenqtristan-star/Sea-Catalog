@@ -11,7 +11,8 @@
   <button onclick="setTab('pitcher')">Pitchers</button>
   <button onclick="toggleStats()">Career Stats</button>
 
-  <div class="catalog-container">
+  You need to move the player-display div inside the catalog-container so it sits to the right of the table. Update your HTML:
+html<div class="catalog-container">
     <table>
       <thead>
         <tr>
@@ -30,6 +31,20 @@
       <tbody id="table-body"></tbody>
     </table>
 
+    <div id="player-display">
+      <button onclick="prevPlayer()">←</button>
+      <div id="player-headshot">
+        <img id="headshot-img" src="" alt="headshot">
+      </div>
+      <div id="player-statshot">
+        <img id="statshot-img" src="" alt="statshot">
+      </div>
+      <button onclick="nextPlayer()">→</button>
+    </div>
+
+  </div>
+
+  <div style="display: flex; gap: 20px; align-items: flex-start;">
     <div id="glossary">
       <h3>Stat Glossary</h3>
       <div id="hitter-glossary">
@@ -44,6 +59,13 @@
         <p><strong>SO</strong> — Strikeouts. Total batters struck out.</p>
         <p><strong>WAR</strong> — Wins Above Replacement. How many wins a player adds compared to a replacement level player.</p>
       </div>
+    </div>
+
+    <div id="how-to">
+      <h3>How to Use</h3>
+      <p><strong>Hitters / Pitchers</strong> — Switch between the hitting and pitching roster.</p>
+      <p><strong>Career Stats</strong> — Toggle between the 2026 season stats and each player's career stats.</p>
+      <p><strong>Sort</strong> — Click any column header to sort players by that stat. Click again to reverse the order.</p>
     </div>
   </div>
 
