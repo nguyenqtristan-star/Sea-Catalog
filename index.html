@@ -5,46 +5,15 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Angels Catalog</h1>
-  <p id="timestamp">Stats as of 4/19/2026 12:00 PM</p>
-  <button onclick="setTab('hitter')">Hitters</button>
-  <button onclick="setTab('pitcher')">Pitchers</button>
-  <button onclick="toggleStats()">Career Stats</button>
-
-  You need to move the player-display div inside the catalog-container so it sits to the right of the table. Update your HTML:
-html<div class="catalog-container">
-    <table>
-      <thead>
-        <tr>
-          <th onclick="sortBy('name')">Name</th>
-          <th>Position</th>
-          <th onclick="sortBy('BA')" id="ba-header">BA</th>
-          <th onclick="sortBy('HR')" id="hr-header">HR</th>
-          <th onclick="sortBy('OPS')" id="ops-header">OPS</th>
-          <th onclick="sortBy('WAR')" id="war-hitter-header">WAR</th>
-          <th onclick="sortBy('ERA')" id="era-header">ERA</th>
-          <th onclick="sortBy('IP')" id="ip-header">IP</th>
-          <th onclick="sortBy('SO')" id="so-header">SO</th>
-          <th onclick="sortBy('WAR')" id="war-pitcher-header">WAR</th>
-        </tr>
-      </thead>
-      <tbody id="table-body"></tbody>
-    </table>
-
-    <div id="player-display">
-      <button onclick="prevPlayer()">←</button>
-      <div id="player-headshot">
-        <img id="headshot-img" src="" alt="headshot">
-      </div>
-      <div id="player-statshot">
-        <img id="statshot-img" src="" alt="statshot">
-      </div>
-      <button onclick="nextPlayer()">→</button>
+  <div class="top-row">
+    <div id="title-area">
+      <h1>Angels Catalog</h1>
+      <p id="timestamp">Stats as of 4/19/2026 12:00 PM</p>
+      <button onclick="setTab('hitter')">Hitters</button>
+      <button onclick="setTab('pitcher')">Pitchers</button>
+      <button onclick="toggleStats()">Career Stats</button>
     </div>
 
-  </div>
-
-  <div style="display: flex; gap: 20px; align-items: flex-start;">
     <div id="glossary">
       <h3>Stat Glossary</h3>
       <div id="hitter-glossary">
@@ -67,6 +36,41 @@ html<div class="catalog-container">
       <p><strong>Career Stats</strong> — Toggle between the 2026 season stats and each player's career stats.</p>
       <p><strong>Sort</strong> — Click any column header to sort players by that stat. Click again to reverse the order.</p>
     </div>
+  </div>
+
+  <div class="bottom-row">
+    <table>
+      <thead>
+        <tr>
+          <th onclick="sortBy('name')">Name</th>
+          <th>Position</th>
+          <th onclick="sortBy('BA')" id="ba-header">BA</th>
+          <th onclick="sortBy('HR')" id="hr-header">HR</th>
+          <th onclick="sortBy('OPS')" id="ops-header">OPS</th>
+          <th onclick="sortBy('WAR')" id="war-hitter-header">WAR</th>
+          <th onclick="sortBy('ERA')" id="era-header">ERA</th>
+          <th onclick="sortBy('IP')" id="ip-header">IP</th>
+          <th onclick="sortBy('SO')" id="so-header">SO</th>
+          <th onclick="sortBy('WAR')" id="war-pitcher-header">WAR</th>
+        </tr>
+      </thead>
+      <tbody id="table-body"></tbody>
+    </table>
+
+    <button onclick="prevPlayer()">←</button>
+
+    <div id="player-card">
+      <p id="player-name"></p>
+      <div id="player-headshot">
+        <img id="headshot-img" src="" alt="headshot">
+      </div>
+    </div>
+
+    <div id="player-statshot">
+      <img id="statshot-img" src="" alt="statshot">
+    </div>
+
+    <button onclick="nextPlayer()">→</button>
   </div>
 
   <script src="scripts.js"></script>

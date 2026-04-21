@@ -20,17 +20,22 @@ button {
   cursor: pointer;
 }
 
-.catalog-container {
+.top-row {
   display: flex;
-  align-items: flex-start;
   gap: 20px;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.bottom-row {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
 }
 
 table {
   width: auto;
   border-collapse: collapse;
-  margin-top: 20px;
-  table-layout: fixed;
 }
 
 th, td {
@@ -46,14 +51,12 @@ th {
 }
 
 #glossary {
-  width: auto;
-  max-width: 353px;
+  width: 250px;
   background: #f9f9f9;
   border: 1px solid #ccc;
   padding: 12px;
   border-radius: 8px;
   font-size: 13px;
-  margin-top: 20px;
 }
 
 #glossary h3 {
@@ -65,13 +68,12 @@ th {
 }
 
 #how-to {
-  width: 353px;
+  width: 250px;
   background: #f9f9f9;
   border: 1px solid #ccc;
   padding: 12px;
   border-radius: 8px;
   font-size: 13px;
-  margin-top: 20px;
 }
 
 #how-to h3 {
@@ -82,21 +84,27 @@ th {
   margin: 6px 0;
 }
 
-#player-display {
+#player-card {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 10px;
-  margin-top: 20px;
+}
+
+#player-name {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  text-align: center;
 }
 
 #player-headshot img {
-  width: 400px;
+  width: 250px;
   border: 1px solid #ccc;
   border-radius: 8px;
 }
 
 #player-statshot img {
-  width: 600px;
+  width: 400px;
   border: 1px solid #ccc;
   border-radius: 8px;
 }
