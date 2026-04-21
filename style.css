@@ -18,6 +18,7 @@ button {
   margin: 5px;
   padding: 8px;
   cursor: pointer;
+  border: 1px solid #BA0021;;
 }
 
 .top-row {
@@ -36,6 +37,7 @@ button {
 table {
   width: auto;
   border-collapse: collapse;
+  border: 3px solid #BA0021;
 }
 
 th, td {
@@ -53,7 +55,7 @@ th {
 #glossary {
   width: 250px;
   background: #f9f9f9;
-  border: 1px solid #ccc;
+  border: 1px solid #BA0021;;
   padding: 12px;
   border-radius: 8px;
   font-size: 13px;
@@ -70,7 +72,7 @@ th {
 #how-to {
   width: 250px;
   background: #f9f9f9;
-  border: 1px solid #ccc;
+  border: 1px solid #BA0021;;
   padding: 12px;
   border-radius: 8px;
   font-size: 13px;
@@ -84,14 +86,21 @@ th {
   margin: 6px 0;
 }
 
-#player-card {
+#player-section {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-left: 150px;
+}
+
+#player-images {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
 }
 
 #player-name {
-  font-size: 16px;
+  font-size: 30px;
   font-weight: bold;
   margin-bottom: 8px;
   text-align: center;
@@ -99,12 +108,12 @@ th {
 
 #player-headshot img {
   width: 250px;
-  border: 1px solid #ccc;
+  border: 3px solid #BA0021;
   border-radius: 8px;
 }
 
 #player-statshot img {
   width: 400px;
-  border: 1px solid #ccc;
+  border: 3px solid #BA0021;
   border-radius: 8px;
 }

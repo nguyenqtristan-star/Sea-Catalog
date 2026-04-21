@@ -57,20 +57,21 @@
       <tbody id="table-body"></tbody>
     </table>
 
-    <button onclick="prevPlayer()">←</button>
-
-    <div id="player-card">
+    <div id="player-section">
       <p id="player-name"></p>
-      <div id="player-headshot">
-        <img id="headshot-img" src="" alt="headshot">
+      <div id="player-images">
+        <div id="player-headshot">
+          <img id="headshot-img" src="" alt="headshot">
+        </div>
+        <div id="player-statshot">
+          <img id="statshot-img" src="" alt="statshot">
+        </div>
+      </div>
+      <div id="player-buttons">
+        <button onclick="prevPlayer()">←</button>
+        <button onclick="nextPlayer()">→</button>
       </div>
     </div>
-
-    <div id="player-statshot">
-      <img id="statshot-img" src="" alt="statshot">
-    </div>
-
-    <button onclick="nextPlayer()">→</button>
   </div>
 
   <script src="scripts.js"></script>
