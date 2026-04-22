@@ -1,6 +1,7 @@
 body {
   font-family: Arial;
-  padding: 20px;
+  padding: 10px 20px;
+  background-color: #BA0021;
 }
 
 h1 {
@@ -14,11 +15,54 @@ h1 {
   margin-bottom: 10px;
 }
 
+#title-area {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: -10px;
+}
+
+#angels-logo {
+  width: 250px;
+  display: block;
+  margin-left: -10px;
+  margin-top: -70px;
+}
+
+h1 {
+  font-family: 'Times New Roman', serif;
+  margin-top: -70px;
+  color: #BA0021;
+  font-size: 60px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  -webkit-text-stroke: 3px #003263;
+}
+
 button {
   margin: 5px;
-  padding: 8px;
+  padding: 12px 24px;
   cursor: pointer;
-  border: 1px solid #BA0021;;
+  border: 4px solid black;
+  background: #003263;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+button:hover {
+  background: #BA0021;
+  color: white;
+}
+
+#button-group {
+  margin-top: 0px;
+}
+
+#player-buttons button {
+  padding: 16px 32px;
+  font-size: 20px;
 }
 
 .top-row {
@@ -36,26 +80,29 @@ button {
 
 table {
   width: auto;
+  min-width: 1000px;
   border-collapse: collapse;
-  border: 3px solid #BA0021;
+  border: 4px solid black;
 }
 
 th, td {
-  border: 1px solid #ccc;
+  border: 4px solid black;
   padding: 8px 20px;
   text-align: left;
   min-width: 80px;
+  background: white;
 }
 
 th {
   cursor: pointer;
-  background: #f4f4f4;
+  background: #003263;
+  color: white;
 }
 
 #glossary {
   width: 250px;
   background: #f9f9f9;
-  border: 1px solid #BA0021;;
+  border: 4px solid #003263;
   padding: 12px;
   border-radius: 8px;
   font-size: 13px;
@@ -72,18 +119,17 @@ th {
 #how-to {
   width: 250px;
   background: #f9f9f9;
-  border: 1px solid #BA0021;;
+  border: 4px solid #003263;
   padding: 12px;
   border-radius: 8px;
   font-size: 13px;
 }
-
 #how-to h3 {
   margin-top: 0;
 }
 
 #how-to p {
-  margin: 6px 0;
+  margin: 4px 0;
 }
 
 #player-section {
@@ -100,7 +146,7 @@ th {
 }
 
 #player-name {
-  font-size: 30px;
+  font-size: 40px;
   font-weight: bold;
   margin-bottom: 8px;
   text-align: center;
@@ -108,12 +154,19 @@ th {
 
 #player-headshot img {
   width: 250px;
-  border: 3px solid #BA0021;
+  border: 4px solid #003263;
   border-radius: 8px;
 }
 
 #player-statshot img {
   width: 400px;
-  border: 3px solid #BA0021;
+  border: 4px solid #003263;
   border-radius: 8px;
+}
+
+.top-row {
+  display: flex;
+  gap: 20px;
+  align-items: stretch;
+  margin-bottom: 20px;
 }
